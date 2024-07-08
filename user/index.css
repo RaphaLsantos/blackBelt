@@ -264,36 +264,115 @@ body {
 
 
 /*===================Galeria================*/
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-}
 
-.gallery-container {
+.gallery-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.gallery img {
+.gallery-header h2 {
+    font-size: 2rem;
+}
+
+.gallery-header .highlight {
+    color: #00bcd4;
+}
+
+.gallery-header .show-all {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.gallery-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 300px;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+.item-details {
+    margin-top: 10px;
 }
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.color-option {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.color-option.black { background-color: #000; }
+.color-option.white { background-color: #fff; border: 1px solid #ccc; }
+.color-option.gold { background-color: #ffd700; }
+
+.learn-more {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.learn-more:hover {
+    background-color: #0097a7;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #00bcd4;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
 
 /*===================sobre================*/
 
