@@ -93,7 +93,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 100px;
+    padding: 10px 173px;
     flex-wrap: wrap;
 }
 
@@ -163,7 +163,7 @@ body {
 }
 
 .aba_2 img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     position: relative;
     left: 10rem;
