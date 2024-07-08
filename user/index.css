@@ -93,29 +93,29 @@ body {
 /*===================home================*/
 .home {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 173px;
-    flex-wrap: wrap;
+    padding: 10px 180px;
+    height: 70vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.aba_1,
+.aba_2 {
+    flex: 1;
+    /* Ambas as abas ocupam o mesmo espaço */
+    padding: 20px;
+    /* Espaçamento interno entre as abas */
 }
 
 .aba_1 {
     display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    flex: 1;
-    /* Adicione flex: 1 para que aba_1 ocupe todo o espaço disponível */
-}
-
-.aba_2 {
-    display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    /* Adicione flex: 1 para que aba_2 ocupe todo o espaço disponível */
+    /* Centraliza itens horizontalmente */
+    gap: 1.5rem;
 }
-
 
 .aba_1 h1 {
     font-size: 45px;
@@ -139,6 +139,7 @@ body {
     position: relative;
     overflow: hidden;
     color: var(--branco);
+    top: 2rem;
 }
 
 .aba_1 .btn_home:hover {
@@ -170,22 +171,19 @@ body {
 
 .aba_2 {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* Centraliza itens horizontalmente */
 }
 
 .aba_2 img {
     max-width: 100%;
     height: auto;
-    position: relative;
-    left: 10rem;
 }
 
 .aba_2 p {
-    position: relative;
-    top: -6rem;
-    left: 10rem;
+    margin-top: -1.5rem;
+    /* Ajuste o espaçamento conforme necessário */
 }
 
 .arrow_container {
@@ -204,68 +202,47 @@ body {
     font-size: 20px;
 }
 
-.home_hr {
-    border: 0;
-    height: 5px;
-    background-color: var(--blue);
-    width: 70%;
-    border-radius: 10px;
-    transform: rotate(90deg);
-    position: relative;
-    right: 25rem;
-    top: 30rem;
-
-}
-
 @media (max-width: 768px) {
     .home {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 10px;
+        /* Ajusta o padding para telas menores */
     }
 
     .home .aba_1,
     .home .aba_2 {
         flex: none;
         width: 100%;
+        /* Ambas ocupam toda a largura */
+        margin-bottom: 20px;
+        /* Espaçamento entre as abas */
     }
-
 
     .home .aba_1 {
         justify-content: center;
-        display: flex;
-        text-align: center;
         align-items: center;
+        text-align: center;
         position: relative;
-        top: 2rem;
+        top: -2rem;
     }
 
     .home .aba_1 .btn_home {
-        justify-content: center;
-        align-items: center;
-        width: 150%;
+        position: relative;
+        top: 1rem;
+        width: 70%;
+        /* Ajusta a largura do botão para ocupar o espaço */
     }
 
     .home .aba_1 h1 {
         font-size: 2.5em;
-        white-space: nowrap;
-        text-align: center;
-        display: flex;
-        align-items: center;
     }
 
     .home .aba_1 p {
         font-size: 1em;
-        white-space: nowrap;
-        text-align: center;
-    }
-
-    .home .btn_home {
-        margin-top: 20px;
     }
 
     .home .aba_2 {
         display: none;
+        /* Esconde aba_2 em telas menores */
     }
 }
 
@@ -279,13 +256,11 @@ body {
     }
 
     .home .aba_1 .btn_home {
-        justify-content: center;
-        align-items: center;
         width: 250px;
     }
 }
-
 /*===================home================*/
+
 
 
 /*===================sobre================*/
@@ -300,9 +275,8 @@ body {
     gap: 2rem;
     background: linear-gradient(135deg, #2B2B2B 0%, #404040 100%);
     border-radius: 10px;
-    height: 600px;
+    height: 100vh;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    /* Sombra suave */
 }
 
 .sobre .aba_1 {
@@ -313,6 +287,34 @@ body {
     height: auto;
     flex: 1;
     margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre .decorative-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue);
+    margin: 20px 0;
+}
+
+.sobre .product-features {
+    color: var(--branco);
+    margin-top: 20px;
+}
+
+.sobre .product-features h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.sobre .product-features ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sobre .product-features ul li {
+    margin-bottom: 5px;
 }
 
 .sobre .aba_1,
@@ -323,7 +325,43 @@ body {
 
 .sobre .aba_2 {
     flex: 1;
-    /* Para ocupar todo o espaço disponível */
+    position: relative;
+}
+
+.sobre .img_description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--branco);
+}
+
+.sobre .img_description h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.sobre .img_description p {
+    font-size: 1.1rem;
+    max-width: 80%;
+    margin: 0 auto 20px;
+}
+
+.sobre .img_description .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 15rem;
+}
+
+.sobre .img_description .btn:hover {
+    background-color: var(--blue-hover);
 }
 
 .sobre .aba_1 h1 {
@@ -342,14 +380,13 @@ body {
 .sobre .img_container {
     width: 100%;
     position: relative;
-    right: 6rem;
     display: flex;
     justify-content: center;
 }
 
 .sobre .aba_2 .img_sobre {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     cursor: pointer;
 }
 
@@ -358,7 +395,7 @@ body {
         flex-direction: column;
         padding: 10px 20px;
         top: 10rem;
-        height: 900px;
+        height: auto;
     }
 
     .sobre .aba_1,
@@ -366,26 +403,34 @@ body {
         width: 85%;
         text-align: center;
     }
-    
-    .sobre .aba_1{
-        position: relative;
-        right: .5rem;
-    }
 
+    .sobre .aba_1 {
+        margin-right: 0;
+    }
 
     .sobre .img_container {
         justify-content: center;
         position: relative;
-        right: 11rem;
     }
 
     .sobre .aba_2 .img_sobre {
-        width: 80%;
-        transition: all ease .5s;
+        width: 100%;
+        transition: all ease 0.5s;
     }
 
     .sobre .aba_2 .img_sobre:hover {
         transform: rotate(360deg);
+    }
+
+    .sobre .img_description {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+
+    .sobre .img_description .btn {
+        position: relative;
+        top: -2rem;
     }
 }
 
