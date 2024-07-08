@@ -396,6 +396,7 @@ body {
         padding: 10px 20px;
         top: 10rem;
         height: auto;
+        width:auto;
     }
 
     .sobre .aba_1,
@@ -405,7 +406,8 @@ body {
     }
 
     .sobre .aba_1 {
-        margin-right: 0;
+        position: relative;
+        right: .5rem;
     }
 
     .sobre .img_container {
@@ -431,15 +433,9 @@ body {
     .sobre .img_description .btn {
         position: relative;
         top: -2rem;
+        right: 1rem;
+        left: auto;
     }
 }
 /*===================sobre================*/
-
-
-
-/*===================galeria================*/
-
-/*===================galeria================*/
-
-
 
