@@ -103,7 +103,8 @@ body {
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    flex: 1; /* Adicione flex: 1 para que aba_1 ocupe todo o espaço disponível */
+    flex: 1;
+    /* Adicione flex: 1 para que aba_1 ocupe todo o espaço disponível */
 }
 
 .aba_2 {
@@ -111,7 +112,8 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    flex: 1; /* Adicione flex: 1 para que aba_2 ocupe todo o espaço disponível */
+    flex: 1;
+    /* Adicione flex: 1 para que aba_2 ocupe todo o espaço disponível */
 }
 
 
@@ -125,7 +127,7 @@ body {
 }
 
 .aba_1 .btn_home {
-    width: 60%;
+    width: 50%;
     height: 50px;
     padding: .5rem;
     border-radius: 0px;
@@ -211,8 +213,8 @@ body {
     transform: rotate(90deg);
     position: relative;
     right: 25rem;
-    top: 30rem; 
-  
+    top: 30rem;
+
 }
 
 @media (max-width: 768px) {
@@ -279,7 +281,7 @@ body {
     .home .aba_1 .btn_home {
         justify-content: center;
         align-items: center;
-        width: 200%;
+        width: 250px;
     }
 }
 
@@ -289,12 +291,18 @@ body {
 /*===================sobre================*/
 .sobre {
     display: flex;
-    justify-content: center;
-    padding: 10px 100px;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 173px;
+    flex-wrap: wrap;
     position: relative;
     top: 20rem;
     gap: 2rem;
+    background: linear-gradient(135deg, #2B2B2B 0%, #404040 100%);
+    border-radius: 10px;
+    height: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Sombra suave */
 }
 
 .sobre .aba_1 {
@@ -303,6 +311,19 @@ body {
     width: 50%;
     border-radius: 10px;
     height: auto;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.sobre .aba_1,
+.sobre .aba_2 {
+    position: relative;
+    top: 2rem;
+}
+
+.sobre .aba_2 {
+    flex: 1;
+    /* Para ocupar todo o espaço disponível */
 }
 
 .sobre .aba_1 h1 {
@@ -316,7 +337,6 @@ body {
 .sobre .aba_1 p {
     width: 100%;
     color: var(--branco);
-    position: relative;
 }
 
 .sobre .img_container {
@@ -333,31 +353,34 @@ body {
     cursor: pointer;
 }
 
-
 @media (max-width: 768px) {
     .sobre {
         flex-direction: column;
         padding: 10px 20px;
         top: 10rem;
         gap: 1rem;
+        height: 900px;
     }
 
     .sobre .aba_1,
     .sobre .aba_2 {
-        width: 100%;
+        width: 85%;
     }
+    
+
 
     .sobre .img_container {
-        justify-content: center; 
+        justify-content: center;
         position: relative;
         right: 10rem;
     }
-   
+
     .sobre .aba_2 .img_sobre {
-        width: 70%;
+        width: 80%;
         transition: all ease .5s;
     }
-    .sobre .aba_2 .img_sobre:hover{
+
+    .sobre .aba_2 .img_sobre:hover {
         transform: rotate(360deg);
     }
 }
