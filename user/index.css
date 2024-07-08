@@ -40,7 +40,7 @@ body {
 
 .list_itens a.active {
     font-weight: bold;
-    color: var(--blufeffe);
+    color: var(--blue);
 }
 
 .menu_icon {
