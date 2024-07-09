@@ -52,13 +52,8 @@ window.addEventListener('scroll', () => {
 
 //efeito voltar ao inicio
 window.addEventListener('scroll', function() {
-    var startInicio = document.getElementById('startInicio');
-    var scrollPos = window.scrollY || document.documentElement.scrollTop;
-    var scrollHeight = document.documentElement.scrollHeight;
-    var clientHeight = document.documentElement.clientHeight;
-
-    // Verifica se a rolagem está próxima do final da página
-    if ((scrollPos + clientHeight) >= (scrollHeight - 50)) { // Ajuste conforme necessário
+    const startInicio = document.getElementById('startInicio');
+    if (window.scrollY > 200) { // Ajuste o valor conforme necessário
         startInicio.classList.add('show');
     } else {
         startInicio.classList.remove('show');
@@ -68,4 +63,6 @@ window.addEventListener('scroll', function() {
 document.getElementById('startInicio').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
 //fim efeito voltar ao inicio
