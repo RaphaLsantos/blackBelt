@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //efeito rotação automática da imagem final
 
 
+
 //navbar ao descer a tela
 const navBar = document.querySelector('.nav_bar');
 let lastScrollTop = 0;
@@ -63,6 +64,29 @@ window.addEventListener('scroll', function() {
 document.getElementById('startInicio').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-
 //fim efeito voltar ao inicio
+
+
+
+
+//carousel clientes
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel_clientes');
+    const btnLeft = document.getElementById('btnLeft');
+    const btnRight = document.getElementById('btnRight');
+
+    btnLeft.addEventListener('click', function() {
+        carousel.scrollBy({
+            left: -carousel.offsetWidth, // Desloca para a esquerda pela largura do carousel
+            behavior: 'smooth' // Adiciona um efeito suave de deslizamento
+        });
+    });
+
+    btnRight.addEventListener('click', function() {
+        carousel.scrollBy({
+            left: carousel.offsetWidth, // Desloca para a direita pela largura do carousel
+            behavior: 'smooth' // Adiciona um efeito suave de deslizamento
+        });
+    });
+});
+//carousel clientes
