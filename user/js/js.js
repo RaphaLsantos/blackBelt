@@ -66,7 +66,12 @@ document.getElementById('startInicio').addEventListener('click', function() {
 });
 //fim efeito voltar ao inicio
 
-// inicio carrossel galeria
+// inicio carrossel galeria Lacrados
+
+// fim carrossel galeria
+
+// inicio carrossel galeria Seminovos Premium
+
 const track = document.querySelector('.carousel-track');
         const slides = Array.from(track.children);
         const nextButton = document.querySelector('.next-btn');
