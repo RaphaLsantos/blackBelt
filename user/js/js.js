@@ -66,12 +66,9 @@ document.getElementById('startInicio').addEventListener('click', function() {
 });
 //fim efeito voltar ao inicio
 
-// inicio carrossel galeria Lacrados
 
-// fim carrossel galeria
 
 // inicio carrossel galeria Seminovos Premium
-
 const track = document.querySelector('.carousel-track');
         const slides = Array.from(track.children);
         const nextButton = document.querySelector('.next-btn');
@@ -109,3 +106,28 @@ const track = document.querySelector('.carousel-track');
             }
             moveToSlide(track, currentSlide, prevSlide);
         });
+// inicio carrossel galeria Seminovos Premium
+
+
+
+//inicio carousel clientes
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('carouselClientes');
+    const btnLeft = document.getElementById('btnLeft');
+    const btnRight = document.getElementById('btnRight');
+
+    btnLeft.addEventListener('click', function() {
+        carousel.scrollBy({
+            left: -carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    btnRight.addEventListener('click', function() {
+        carousel.scrollBy({
+            left: carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+});
+//final carousel clientes

@@ -79,15 +79,22 @@ body {
     .menu_icon {
         display: block;
         margin-top: 1rem;
+        position: fixed;
+        z-index: 1000;
     }
 
     .nav_bar.active .list_itens {
         transform: translateY(0);
     }
 }
+@media(max-width:400px){
+    .menu_icon {
+        transition: all ease .5s;
+        position: fixed;
+    }
+}
 
 /*===================navbar================*/
-
 
 
 
@@ -291,6 +298,7 @@ body {
     margin: 0 1rem; 
     min-width: 300px; 
     max-width: 45%; 
+    height: 700px;
 }
 
 .sobre .decorative-line {
@@ -343,6 +351,8 @@ body {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    position: relative;
+    top: 2rem;
 }
 
 .sobre .img_description .btn:hover {
@@ -388,6 +398,10 @@ body {
 
     .sobre .img_description {
         margin-top: 1rem; /* Ajusta a margem superior */
+    }
+    .sobre .img_description .btn {
+        position: relative;
+        top: 0;
     }
 }
 
@@ -526,6 +540,7 @@ body {
 /*===================Galeria================*/
 
 
+
 /*===================clientes================*/
 
 .clientes_container {
@@ -550,7 +565,7 @@ body {
 
 .carousel_clientes {
     display: flex;
-    overflow-x: auto; /* Alterado para overflow-x auto para scroll horizontal */
+    overflow-x: auto;
     gap: 20px; 
     padding: 10px;
     margin-top: 120px; 
@@ -562,11 +577,11 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: 280px; /* Ajuste o tamanho do card conforme necessário */
-    flex: 0 0 calc(50% - 20px); /* 50% do container com espaço de 20px entre eles */
+    width: 280px;
+    flex: 0 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
-    width: 200px; /* Largura mínima dos cards */
-    margin: 0 10px; /* Espaçamento entre os cards */
+    width: 200px;
+    margin: 0 10px;
 }
 
 .card:hover {
@@ -625,31 +640,34 @@ body {
     margin-left: 80px;
     margin-top: 5rem;
 }
+
 .btn_right{
     margin-right: 80px;
     margin-top: 5rem;
 }
+
 .btn_left, .btn_right {
-    display: none; /* Oculta inicialmente para dispositivos móveis */
+    display: none;
 }
 
 @media (min-width: 768px) {
-  .carousel_clientes {
-        overflow-x: auto; /* Permitir scroll horizontal */
-        flex-wrap: nowrap; /* Evita quebrar em linhas */
-        gap: 0; /* Sem espaço entre os cards */
-        padding: 0; /* Sem padding lateral */
+    .carousel_clientes {
+        overflow-x: hidden;
+        flex-wrap: nowrap;
+        gap: 0;
+        padding: 0;
         scroll-snap-type: x mandatory;
     }
 
     .card {
-        flex: 0 0 calc(50% - 20px); /* 50% do container com espaço de 20px entre eles */
+        flex: 0 0 calc(50% - 20px);
         max-width: calc(50% - 20px);
-        width: 200px; /* Largura mínima dos cards */
-        margin: 0 10px; /* Espaçamento entre os cards */
+        width: 200px;
+        margin: 0 10px;
     }
+
     .btn_left, .btn_right {
-        display: flex; /* Mostra os botões apenas em telas maiores que 768px */
+        display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
@@ -680,7 +698,4 @@ body {
         font-size: 1.2rem;
     }
 }
-
-
-
 /*===================clientes================*/
