@@ -68,7 +68,7 @@ document.getElementById('startInicio').addEventListener('click', function() {
 
 
 
-// inicio carrossel galeria Seminovos Premium
+// inicio carrossel galeria lacrados
 const track = document.querySelector('.carousel-track');
         const slides = Array.from(track.children);
         const nextButton = document.querySelector('.next-btn');
@@ -106,6 +106,48 @@ const track = document.querySelector('.carousel-track');
             }
             moveToSlide(track, currentSlide, prevSlide);
         });
+// inicio carrossel galeria lacrados
+
+
+
+// inicio carrossel galeria Seminovos Premium
+const premiumTrack = document.querySelector('.premium-carousel-track');
+const premiumSlides = Array.from(premiumTrack.children);
+const premiumNextButton = document.querySelector('.premium-next-btn');
+const premiumPrevButton = document.querySelector('.premium-prev-btn');
+const premiumSlideWidth = premiumSlides[0].getBoundingClientRect().width;
+
+// Arrange the slides next to one another
+const setPremiumSlidePosition = (slide, index) => {
+    slide.style.left = premiumSlideWidth * index + 'px';
+};
+premiumSlides.forEach(setPremiumSlidePosition);
+
+const moveToPremiumSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('premium-current-slide');
+    targetSlide.classList.add('premium-current-slide');
+};
+
+// Click right, move slides to the right
+premiumNextButton.addEventListener('click', e => {
+    const currentSlide = premiumTrack.querySelector('.premium-current-slide');
+    let nextSlide = currentSlide.nextElementSibling;
+    if (!nextSlide) {
+        nextSlide = premiumSlides[0];
+    }
+    moveToPremiumSlide(premiumTrack, currentSlide, nextSlide);
+});
+
+// Click left, move slides to the left
+premiumPrevButton.addEventListener('click', e => {
+    const currentSlide = premiumTrack.querySelector('.premium-current-slide');
+    let prevSlide = currentSlide.previousElementSibling;
+    if (!prevSlide) {
+        prevSlide = premiumSlides[premiumSlides.length - 1];
+    }
+    moveToPremiumSlide(premiumTrack, currentSlide, prevSlide);
+});
 // inicio carrossel galeria Seminovos Premium
 
 

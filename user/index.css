@@ -87,7 +87,8 @@ body {
         transform: translateY(0);
     }
 }
-@media(max-width:400px){
+
+@media(max-width:400px) {
     .menu_icon {
         transition: all ease .5s;
         position: fixed;
@@ -275,17 +276,17 @@ body {
 /*===================sobre================*/
 .sobre {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     flex-wrap: wrap;
     position: relative;
     top: 20rem;
-    gap: 2rem; 
+    gap: 2rem;
     background: linear-gradient(135deg, #2B2B2B 0%, #404040 100%);
     border-radius: 10px;
     min-height: 100vh;
- 
+
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -295,9 +296,9 @@ body {
     padding: 2rem;
     border-radius: 10px;
     flex: 1;
-    margin: 0 1rem; 
-    min-width: 300px; 
-    max-width: 45%; 
+    margin: 0 1rem;
+    min-width: 300px;
+    max-width: 45%;
     height: 700px;
 }
 
@@ -377,14 +378,14 @@ body {
         align-items: center;
         padding: 10px;
         top: 10rem;
-        gap: 1rem; 
+        gap: 1rem;
     }
 
     .sobre .aba_1,
     .sobre .aba_2 {
-        width: 100%; 
+        width: 100%;
         margin: 1rem 0;
-        padding: 1rem; 
+        padding: 1rem;
     }
 
     .sobre .img_container {
@@ -392,13 +393,15 @@ body {
     }
 
     .sobre .img_sobre {
-        width: 100%; 
-        max-width: none; 
+        width: 100%;
+        max-width: none;
     }
 
     .sobre .img_description {
-        margin-top: 1rem; /* Ajusta a margem superior */
+        margin-top: 1rem;
+        /* Ajusta a margem superior */
     }
+
     .sobre .img_description .btn {
         position: relative;
         top: 0;
@@ -410,7 +413,7 @@ body {
 
 
 
-/*===================Galeria================*/
+/*===================Galeria seção 2================*/
 .galeria {
     position: relative;
     top: 35rem;
@@ -537,7 +540,139 @@ body {
 .next-btn {
     right: 0;
 }
-/*===================Galeria================*/
+
+/*===================Galeria seção 1================*/
+
+
+
+/*===================Galeria seção 2================*/
+.premium-gallery {
+    position: relative;
+    top: 35rem;
+}
+
+.premium-gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.premium-gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.premium-gallery-header h2 {
+    font-size: 2rem;
+}
+
+.premium-gallery-header .premium-highlight {
+    color: #00bcd4;
+}
+
+.premium-gallery-header .premium-show-all {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.premium-gallery-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.premium-carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.premium-carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.premium-carousel-slide {
+    min-width: 300px;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.premium-carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.premium-item-details {
+    margin-top: 10px;
+}
+
+.premium-color-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.premium-color-option {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.premium-color-option.premium-black {
+    background-color: #000;
+}
+
+.premium-color-option.premium-white {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.premium-color-option.premium-gold {
+    background-color: #ffd700;
+}
+
+.premium-learn-more {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.premium-learn-more:hover {
+    background-color: #0097a7;
+}
+
+.premium-carousel-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #00bcd4;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.premium-prev-btn {
+    left: 0;
+}
+
+.premium-next-btn {
+    right: 0;
+}
+/*===================Galeria seção 2================*/
 
 
 
@@ -549,7 +684,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: 50rem; 
+    top: 50rem;
 }
 
 .nav_clientes {
@@ -560,15 +695,15 @@ body {
 }
 
 .nav_clientes span {
-    color: var(--blue); 
+    color: var(--blue);
 }
 
 .carousel_clientes {
     display: flex;
     overflow-x: auto;
-    gap: 20px; 
+    gap: 20px;
     padding: 10px;
-    margin-top: 120px; 
+    margin-top: 120px;
     scroll-snap-type: x mandatory;
 }
 
@@ -599,8 +734,8 @@ body {
 .client_logo {
     width: 100px;
     height: 100px;
-    border-radius: 50%; 
-    object-fit: cover; 
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 20px;
 }
 
@@ -636,17 +771,18 @@ body {
     background-color: #4682B4;
 }
 
-.btn_left{
+.btn_left {
     margin-left: 80px;
     margin-top: 5rem;
 }
 
-.btn_right{
+.btn_right {
     margin-right: 80px;
     margin-top: 5rem;
 }
 
-.btn_left, .btn_right {
+.btn_left,
+.btn_right {
     display: none;
 }
 
@@ -666,7 +802,8 @@ body {
         margin: 0 10px;
     }
 
-    .btn_left, .btn_right {
+    .btn_left,
+    .btn_right {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -690,12 +827,15 @@ body {
         right: 10px;
     }
 
-    .btn_left:hover, .btn_right:hover {
+    .btn_left:hover,
+    .btn_right:hover {
         background-color: rgba(0, 0, 0, 0.7);
     }
 
-    .fa-arrow-left, .fa-arrow-right {
+    .fa-arrow-left,
+    .fa-arrow-right {
         font-size: 1.2rem;
     }
 }
+
 /*===================clientes================*/
