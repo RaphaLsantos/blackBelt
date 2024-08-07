@@ -412,11 +412,228 @@ body {
 
 
 
-
-/*===================Galeria seção 2================*/
+/*===================Galeria seção 1================*/
 .galeria {
     position: relative;
     top: 35rem;
+}
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gallery-header h2 {
+    font-size: 2rem;
+}
+
+.gallery-header .highlight {
+    color: #00bcd4;
+}
+
+.gallery-header .show-all {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.gallery-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 350px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: all ease .1s;
+    cursor: pointer;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.1);
+}
+
+.carousel-slide:hover {
+    transform: scale(1.05);
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.item-details {
+    margin-top: 10px;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.color-option {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+}
+
+.color-option.black {
+    background-color: #000;
+}
+
+.color-option.white {
+    background-color: #fff;
+}
+
+.color-option.gold {
+    background-color: #ffd700;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.learn-more {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.learn-more:hover {
+    background-color: #0097a7;
+}
+
+.badge.new-model {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff4081;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+.carousel-btn {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: #0097a7;
+}
+
+.prev-btn,
+.next-btn {
+    font-size: 1rem;
+    background-color: var(--grey);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    position: relative;
+    top: 3rem;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: var(--blue);
+    color: var(--branco);
+}
+
+/* Estilo para telas menores */
+@media (max-width: 768px) {
+    .gallery-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-slide {
+        width: calc(100% - 20px);
+        /* Ajusta para um card por vez */
+        margin-right: 20px;
+        /* Mantém o espaço entre os cards */
+    }
+
+    .carousel-btn {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    .carousel-controls {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-slide {
+        width: calc(100% - 10px);
+        /* Ajusta para um card por vez em telas muito pequenas */
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    .carousel-btn {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+/*===================Galeria seção 1================*/
+
+
+
+
+.galeria.premium {
+    position: relative;
+    top: 45rem;
 }
 
 .gallery-section {
@@ -462,13 +679,19 @@ body {
 }
 
 .carousel-slide {
-    min-width: 300px;
-    margin-right: 20px;
+    min-width: 350px;
+    margin-right: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
+    transition: all ease .1s;
+    cursor: pointer;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.05);
 }
 
 .carousel-image {
@@ -492,6 +715,7 @@ body {
     height: 15px;
     border-radius: 50%;
     margin: 0 5px;
+    border: 1px solid #ccc;
 }
 
 .color-option.black {
@@ -500,11 +724,17 @@ body {
 
 .color-option.white {
     background-color: #fff;
-    border: 1px solid #ccc;
 }
 
 .color-option.gold {
     background-color: #ffd700;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00bcd4;
+    margin-bottom: 10px;
 }
 
 .learn-more {
@@ -522,157 +752,80 @@ body {
 }
 
 .carousel-btn {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0 10px;
-    color: #00bcd4;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.prev-btn {
-    left: 0;
-}
-
-.next-btn {
-    right: 0;
-}
-
-/*===================Galeria seção 1================*/
-
-
-
-/*===================Galeria seção 2================*/
-.premium-gallery {
-    position: relative;
-    top: 35rem;
-}
-
-.premium-gallery-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.premium-gallery-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.premium-gallery-header h2 {
-    font-size: 2rem;
-}
-
-.premium-gallery-header .premium-highlight {
-    color: #00bcd4;
-}
-
-.premium-gallery-header .premium-show-all {
-    color: #00bcd4;
-    text-decoration: none;
-}
-
-.premium-gallery-carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.premium-carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-}
-
-.premium-carousel-track {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.premium-carousel-slide {
-    min-width: 300px;
-    margin-right: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-}
-
-.premium-carousel-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.premium-item-details {
-    margin-top: 10px;
-}
-
-.premium-color-options {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.premium-color-option {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    margin: 0 5px;
-}
-
-.premium-color-option.premium-black {
-    background-color: #000;
-}
-
-.premium-color-option.premium-white {
-    background-color: #fff;
-    border: 1px solid #ccc;
-}
-
-.premium-color-option.premium-gold {
-    background-color: #ffd700;
-}
-
-.premium-learn-more {
     background-color: #00bcd4;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 20px;
     cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
     transition: background-color 0.3s;
 }
 
-.premium-learn-more:hover {
+.carousel-btn:hover {
     background-color: #0097a7;
 }
 
-.premium-carousel-btn {
-    background: none;
+.prev-btn,
+.next-btn {
+    font-size: 1rem;
+    background-color: var(--grey);
+    color: #fff;
     border: none;
-    font-size: 2rem;
+    padding: 10px;
     cursor: pointer;
-    padding: 0 10px;
-    color: #00bcd4;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    position: relative;
+    top: 3rem;
 }
 
-.premium-prev-btn {
-    left: 0;
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: var(--blue);
+    color: var(--branco);
 }
 
-.premium-next-btn {
-    right: 0;
+/* Estilo para telas menores */
+@media (max-width: 768px) {
+    .gallery-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-slide {
+        width: calc(100% - 20px);
+        /* Ajusta para um card por vez */
+        margin-right: 20px;
+        /* Mantém o espaço entre os cards */
+    }
+
+    .carousel-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .carousel-controls {
+        gap: 5px;
+    }
 }
-/*===================Galeria seção 2================*/
+
+@media (max-width: 480px) {
+    .gallery-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-slide {
+        width: calc(100% - 10px);
+        /* Ajusta para um card por vez em telas muito pequenas */
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    .carousel-btn {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
 
 
 
@@ -684,7 +837,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: 50rem;
+    top: 55rem;
 }
 
 .nav_clientes {

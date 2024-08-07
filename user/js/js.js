@@ -1,18 +1,18 @@
-//efeito navbar inicio
-document.addEventListener("DOMContentLoaded", function() {
+////////////////////efeito navbar inicio///////////////
+document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menuIcon");
     const navBar = document.querySelector(".nav_bar");
 
-    menuIcon.addEventListener("click", function() {
+    menuIcon.addEventListener("click", function () {
         navBar.classList.toggle("active");
     });
 });
-//efeito navbar final
+/////////////////////efeito navbar final//////////////////
 
 
 
-//efeito rotação automática da imagem
-document.addEventListener("DOMContentLoaded", function() {
+//////////////////efeito rotação automática da imagem///////////////////////
+document.addEventListener("DOMContentLoaded", function () {
     const imgSobre = document.querySelector(".img_sobre");
 
     function rotateImage() {
@@ -21,20 +21,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(rotateImage, 4000);
 });
-//efeito rotação automática da imagem final
+//////////////////efeito rotação automática da imagem fina//////////////////
 
 
 
-//navbar ao descer a tela
+//////////////////////navbar ao descer a tela///////////////////
 const navBar = document.querySelector('.nav_bar');
 let lastScrollTop = 0;
-const delta = 5; 
+const delta = 5;
 
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (Math.abs(lastScrollTop - scrollTop) <= delta)
-        return; 
+        return;
 
     if (scrollTop > lastScrollTop) {
         // Scroll para baixo
@@ -43,16 +43,16 @@ window.addEventListener('scroll', () => {
         // Scroll para cima
         navBar.classList.remove('hidden');
     }
-    
+
     lastScrollTop = scrollTop;
 });
 
-//navbar ao descer a tela
+///////////////////navbar ao descer a tela//////////////////
 
 
 
-//efeito voltar ao inicio
-window.addEventListener('scroll', function() {
+//////////////////////////efeito voltar ao inicio///////////////////////////////////////
+window.addEventListener('scroll', function () {
     const startInicio = document.getElementById('startInicio');
     if (window.scrollY > 200) { // Ajuste o valor conforme necessário
         startInicio.classList.add('show');
@@ -61,63 +61,71 @@ window.addEventListener('scroll', function() {
     }
 });
 
-document.getElementById('startInicio').addEventListener('click', function() {
+document.getElementById('startInicio').addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-//fim efeito voltar ao inicio
+///////////////////////////fim efeito voltar ao inicio/////////////////////////////////
 
 
 
-// inicio carrossel galeria lacrados
+/////////////////// inicio carrossel galeria lacrados///////////////////////
 const track = document.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.next-btn');
-        const prevButton = document.querySelector('.prev-btn');
-        const slideWidth = slides[0].getBoundingClientRect().width;
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+let slideWidth = slides[0].getBoundingClientRect().width;
 
-        // Arrange the slides next to one another
-        const setSlidePosition = (slide, index) => {
-            slide.style.left = slideWidth * index + 'px';
-        };
-        slides.forEach(setSlidePosition);
+// Ajusta a largura de cada slide
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
+};
+slides.forEach(setSlidePosition);
 
-        const moveToSlide = (track, currentSlide, targetSlide) => {
-            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-            currentSlide.classList.remove('current-slide');
-            targetSlide.classList.add('current-slide');
-        };
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
+};
 
-        // Click right, move slides to the right
-        nextButton.addEventListener('click', e => {
-            const currentSlide = track.querySelector('.current-slide');
-            let nextSlide = currentSlide.nextElementSibling;
-            if (!nextSlide) {
-                nextSlide = slides[0];
-            }
-            moveToSlide(track, currentSlide, nextSlide);
-        });
+// Atualiza a largura do slide ao redimensionar a janela
+window.addEventListener('resize', () => {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    slides.forEach(setSlidePosition);
+});
 
-        // Click left, move slides to the left
-        prevButton.addEventListener('click', e => {
-            const currentSlide = track.querySelector('.current-slide');
-            let prevSlide = currentSlide.previousElementSibling;
-            if (!prevSlide) {
-                prevSlide = slides[slides.length - 1];
-            }
-            moveToSlide(track, currentSlide, prevSlide);
-        });
-// inicio carrossel galeria lacrados
+// Clique para mover os slides para a direita
+nextButton.addEventListener('click', () => {
+    const currentSlide = track.querySelector('.current-slide');
+    let nextSlide = currentSlide.nextElementSibling;
+    if (!nextSlide) {
+        nextSlide = slides[0];
+    }
+    moveToSlide(track, currentSlide, nextSlide);
+});
+
+// Clique para mover os slides para a esquerda
+prevButton.addEventListener('click', () => {
+    const currentSlide = track.querySelector('.current-slide');
+    let prevSlide = currentSlide.previousElementSibling;
+    if (!prevSlide) {
+        prevSlide = slides[slides.length - 1];
+    }
+    moveToSlide(track, currentSlide, prevSlide);
+});
+
+//////////////////////// inicio carrossel galeria lacrados///////////////////////////
 
 
 
-// inicio carrossel galeria Seminovos Premium
-const premiumTrack = document.querySelector('.premium-carousel-track');
+/////////////////// inicio carrossel galeria Seminovos Premium ///////////////////////
+const premiumTrack = document.querySelector('.carousel-track');
 const premiumSlides = Array.from(premiumTrack.children);
-const premiumNextButton = document.querySelector('.premium-next-btn');
-const premiumPrevButton = document.querySelector('.premium-prev-btn');
-const premiumSlideWidth = premiumSlides[0].getBoundingClientRect().width;
+const premiumNextButton = document.querySelector('.next-btn');
+const premiumPrevButton = document.querySelector('.prev-btn');
+const carouselTrackContainer = document.querySelector('.carousel-track-container');
+let premiumSlideWidth = premiumSlides[0].getBoundingClientRect().width;
 
-// Arrange the slides next to one another
+// Ajusta a largura de cada slide
 const setPremiumSlidePosition = (slide, index) => {
     slide.style.left = premiumSlideWidth * index + 'px';
 };
@@ -125,13 +133,19 @@ premiumSlides.forEach(setPremiumSlidePosition);
 
 const moveToPremiumSlide = (track, currentSlide, targetSlide) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-    currentSlide.classList.remove('premium-current-slide');
-    targetSlide.classList.add('premium-current-slide');
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
 };
 
-// Click right, move slides to the right
-premiumNextButton.addEventListener('click', e => {
-    const currentSlide = premiumTrack.querySelector('.premium-current-slide');
+// Atualiza a largura do slide ao redimensionar a janela
+window.addEventListener('resize', () => {
+    premiumSlideWidth = premiumSlides[0].getBoundingClientRect().width;
+    premiumSlides.forEach(setPremiumSlidePosition);
+});
+
+// Clique para mover os slides para a direita
+premiumNextButton.addEventListener('click', () => {
+    const currentSlide = premiumTrack.querySelector('.current-slide');
     let nextSlide = currentSlide.nextElementSibling;
     if (!nextSlide) {
         nextSlide = premiumSlides[0];
@@ -139,37 +153,38 @@ premiumNextButton.addEventListener('click', e => {
     moveToPremiumSlide(premiumTrack, currentSlide, nextSlide);
 });
 
-// Click left, move slides to the left
-premiumPrevButton.addEventListener('click', e => {
-    const currentSlide = premiumTrack.querySelector('.premium-current-slide');
+// Clique para mover os slides para a esquerda
+premiumPrevButton.addEventListener('click', () => {
+    const currentSlide = premiumTrack.querySelector('.current-slide');
     let prevSlide = currentSlide.previousElementSibling;
     if (!prevSlide) {
         prevSlide = premiumSlides[premiumSlides.length - 1];
     }
     moveToPremiumSlide(premiumTrack, currentSlide, prevSlide);
 });
-// inicio carrossel galeria Seminovos Premium
+///////////////// fim carrossel galeria Seminovos Premium////////////////
 
 
 
-//inicio carousel clientes
-document.addEventListener('DOMContentLoaded', function() {
+
+///////////////////inicio carousel clientes//////////////////////
+document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.getElementById('carouselClientes');
     const btnLeft = document.getElementById('btnLeft');
     const btnRight = document.getElementById('btnRight');
 
-    btnLeft.addEventListener('click', function() {
+    btnLeft.addEventListener('click', function () {
         carousel.scrollBy({
             left: -carousel.clientWidth,
             behavior: 'smooth'
         });
     });
 
-    btnRight.addEventListener('click', function() {
+    btnRight.addEventListener('click', function () {
         carousel.scrollBy({
             left: carousel.clientWidth,
             behavior: 'smooth'
         });
     });
 });
-//final carousel clientes
+/////////////////////final carousel clientes////////////////////
