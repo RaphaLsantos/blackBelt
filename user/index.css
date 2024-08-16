@@ -837,7 +837,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: 55rem;
+    top: 60rem;
 }
 
 .nav_clientes {
@@ -845,6 +845,13 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    gap: 100%;
+}
+
+.nav_clientes h1{
+    white-space: nowrap;
+    position: relative;
+    right: 100%;
 }
 
 .nav_clientes span {
@@ -858,6 +865,8 @@ body {
     padding: 10px;
     margin-top: 120px;
     scroll-snap-type: x mandatory;
+    position: relative;
+    top: -4rem;
 }
 
 .card {
@@ -924,60 +933,60 @@ body {
     background-color: #4682B4;
 }
 
-.btn_left {
-    margin-left: 80px;
-    margin-top: 5rem;
-}
 
-.btn_right {
-    margin-right: 80px;
-    margin-top: 5rem;
-}
 
-.btn_left,
-.btn_right {
-    display: none;
-}
+/* Para telas menores */
+@media (max-width: 768px) {
+    .nav_clientes {
+        flex-direction: column;
+        text-align: center;
+    }
 
-@media (min-width: 768px) {
+    .nav_clientes h1,
+    .nav_clientes p {
+        margin: 0;
+        margin-bottom: 10px;
+        position: relative;
+        right: 0;
+    }
+
     .carousel_clientes {
-        overflow-x: hidden;
+        display: flex;
         flex-wrap: nowrap;
-        gap: 0;
-        padding: 0;
-        scroll-snap-type: x mandatory;
+        overflow: hidden; /* Esconde os outros cards */
+        width: 100%;
     }
 
     .card {
-        flex: 0 0 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-        width: 200px;
-        margin: 0 10px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+    .btns_clientes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        gap: 5rem;
     }
 
     .btn_left,
     .btn_right {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        margin-top: 0;
         width: 40px;
         height: 40px;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 50%;
         color: #FFFFFF;
         cursor: pointer;
+        justify-content: center;
+        align-items: center;
         transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn_left {
-        left: 10px;
-    }
-
-    .btn_right {
-        right: 10px;
     }
 
     .btn_left:hover,
@@ -989,6 +998,5 @@ body {
     .fa-arrow-right {
         font-size: 1.2rem;
     }
-}
 
 /*===================clientes================*/

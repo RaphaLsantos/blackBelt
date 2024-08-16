@@ -170,21 +170,26 @@ premiumPrevButton.addEventListener('click', () => {
 ///////////////////inicio carousel clientes//////////////////////
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.getElementById('carouselClientes');
-    const btnLeft = document.getElementById('btnLeft');
-    const btnRight = document.getElementById('btnRight');
+    const cards = carousel.querySelectorAll('.card');
+    let currentIndex = 0;
 
-    btnLeft.addEventListener('click', function () {
-        carousel.scrollBy({
-            left: -carousel.clientWidth,
-            behavior: 'smooth'
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.style.transform = `translateX(-${index * 100}%)`;
         });
+    }
+
+    document.getElementById('btnLeft').addEventListener('click', function () {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : cards.length - 1;
+        showCard(currentIndex);
     });
 
-    btnRight.addEventListener('click', function () {
-        carousel.scrollBy({
-            left: carousel.clientWidth,
-            behavior: 'smooth'
-        });
+    document.getElementById('btnRight').addEventListener('click', function () {
+        currentIndex = (currentIndex < cards.length - 1) ? currentIndex + 1 : 0;
+        showCard(currentIndex);
     });
+
+    showCard(currentIndex); // Inicializa o carrossel com o primeiro card visível
 });
+
 /////////////////////final carousel clientes////////////////////
