@@ -193,3 +193,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /////////////////////final carousel clientes////////////////////
+
+
+
+
+/////////////////////evento play do vídeo////////////////////
+function showPlayIcon() {
+    const playIcon = document.querySelector('#play_icon');
+    const videoIcon = document.querySelector('#video_icon');
+
+    // Suavemente oculta o ícone de vídeo e exibe o ícone de play
+    playIcon.style.opacity = 0;
+    videoIcon.style.opacity = 1;
+}
+
+function hidePlayIcon() {
+    const playIcon = document.querySelector('#play_icon');
+    const videoIcon = document.querySelector('#video_icon');
+
+    // Suavemente exibe o ícone de vídeo e oculta o ícone de play
+    playIcon.style.opacity = 1;
+    videoIcon.style.opacity = 0;
+}
+
+function openModal() {
+    const modal = document.querySelector('#modal');
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    const modal = document.querySelector('#modal');
+    modal.style.display = 'none';
+}
+
+/////////////////////evento play do vídeo////////////////////

@@ -54,7 +54,8 @@ body {
     left: 20px;
     color: var(--blue);
 }
-.menu_icon.active{
+
+.menu_icon.active {
     color: var(--branco);
 }
 
@@ -84,7 +85,7 @@ body {
         justify-content: center;
         align-items: center;
         top: 35%;
-        
+
     }
 
     .menu_icon {
@@ -273,12 +274,13 @@ body {
         top: -5rem;
         /* Centraliza itens horizontalmente */
     }
-    
+
     .aba_2 img {
         max-width: 100%;
         height: auto;
     }
-    .aba_2 p{
+
+    .aba_2 p {
         display: none;
     }
 }
@@ -399,6 +401,68 @@ body {
 .sobre .aba_1 p {
     color: var(--branco);
 }
+
+.play_video {
+    position: relative;
+    top: 5rem;
+    width: 30px;
+    height: 30px;
+
+}
+
+.play_video .play,
+.play_video .video {
+    font-size: 30px;
+    color: var(--branco);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 3.5rem;
+    transition: opacity 0.3s ease; /* Transição de opacidade para suavizar a troca */
+}
+
+/* Ícone de vídeo visível inicialmente */
+.play_video .play {
+    opacity: 1;
+}
+
+/* Ícone de play invisível inicialmente */
+.play_video .video {
+    opacity: 0;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
 
 @media (max-width: 768px) {
     .sobre {
@@ -876,7 +940,7 @@ body {
     gap: 100%;
 }
 
-.nav_clientes h1{
+.nav_clientes h1 {
     white-space: nowrap;
     position: relative;
     right: 100%;
@@ -981,7 +1045,8 @@ body {
     .carousel_clientes {
         display: flex;
         flex-wrap: nowrap;
-        overflow: hidden; /* Esconde os outros cards */
+        overflow: hidden;
+        /* Esconde os outros cards */
         width: 100%;
     }
 
@@ -993,39 +1058,39 @@ body {
     }
 }
 
-    .btns_clientes {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-        gap: 5rem;
-    }
+.btns_clientes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    gap: 5rem;
+}
 
-    .btn_left,
-    .btn_right {
-        display: flex;
-        margin-top: 0;
-        width: 40px;
-        height: 40px;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        color: #FFFFFF;
-        cursor: pointer;
-        justify-content: center;
-        align-items: center;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+.btn_left,
+.btn_right {
+    display: flex;
+    margin-top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #FFFFFF;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-    .btn_left:hover,
-    .btn_right:hover {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
+.btn_left:hover,
+.btn_right:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
-    .fa-arrow-left,
-    .fa-arrow-right {
-        font-size: 1.2rem;
-    }
+.fa-arrow-left,
+.fa-arrow-right {
+    font-size: 1.2rem;
+}
 
 /*===================clientes================*/
 
@@ -1046,16 +1111,19 @@ footer {
     position: relative;
     top: 80rem;
 }
-.img_footer{
+
+.img_footer {
     width: 25%;
     position: relative;
     top: 1rem;
     transition: all ease .5s;
     cursor: pointer;
 }
-.img_footer:hover{
+
+.img_footer:hover {
     transform: rotate(360deg);
 }
+
 footer .container_logo {
     display: flex;
     flex-direction: column;
@@ -1065,7 +1133,7 @@ footer .container_logo {
 footer .container_logo h2 {
     margin: 10px 0 5px 0;
     font-size: 24px;
-    color: var(--blue); 
+    color: var(--blue);
 }
 
 footer .container_logo p {
@@ -1077,20 +1145,24 @@ footer .container_icons {
     display: flex;
     gap: 50px;
 }
-footer a{
+
+footer a {
     text-decoration: none;
     color: var(--branco);
 }
+
 footer .icon {
-    width: 50px; /* Defina a largura */
-    height: 50px; /* Defina a altura igual à largura */
-    background-color: var(--grey); 
+    width: 50px;
+    /* Defina a largura */
+    height: 50px;
+    /* Defina a altura igual à largura */
+    background-color: var(--grey);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid var(--blue);
-    border-radius: 100%; 
+    border-radius: 100%;
     transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
     font-size: 20px;
@@ -1110,10 +1182,11 @@ footer .container_origin span {
     color: var(--blue);
 }
 
-.hr_footer{
+.hr_footer {
     width: 90%;
     font-size: 20px;
     border-radius: 50%;
     color: var(--blue);
 }
+
 /*===================footer================*/
