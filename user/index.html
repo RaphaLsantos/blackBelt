@@ -82,6 +82,20 @@
             </div>
             <div class="img_description">
                 <a href="#" class="btn">Saiba mais</a>
+                <div class="play_video" onmouseover="showPlayIcon()" onmouseout="hidePlayIcon()">
+                    <i id="play_icon" class="fa-solid fa-video play"></i>
+                    <i id="video_icon" class="fa-solid fa-play video" onclick="openModal()"></i>
+                </div>
+                
+                <!-- Modal -->
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p>Conteúdo do Modal</p>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
     </main>
@@ -114,7 +128,8 @@
                         </li>
                         <li class="carousel-slide">
                             <div class="badge new-model">Novo</div>
-                            <img class="carousel-image" src="./img/galeria/seminovos/Iphone 15 pro.png" alt="Iphone 15 Pro">
+                            <img class="carousel-image" src="./img/galeria/seminovos/Iphone 15 pro.png"
+                                alt="Iphone 15 Pro">
                             <div class="item-details">
                                 <div class="color-options">
                                     <span class="color-option black"></span>
@@ -128,7 +143,8 @@
                             </div>
                         </li>
                         <li class="carousel-slide">
-                            <img class="carousel-image" src="./img/galeria/seminovos/iphone 15 pro max.png" alt="Iphone 15 Pro Max">
+                            <img class="carousel-image" src="./img/galeria/seminovos/iphone 15 pro max.png"
+                                alt="Iphone 15 Pro Max">
                             <div class="item-details">
                                 <div class="color-options">
                                     <span class="color-option black"></span>
